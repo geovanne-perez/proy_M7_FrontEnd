@@ -1,0 +1,38 @@
+#banner{
+    border-color: whitesmoke;
+    border-style: solid;
+    border-width: 4px;
+}
+.topContainer{
+    margin-top: 150px;
+}
+
+#sectionBeneficios{
+    background-color: #3374DB;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#sectionPlan{
+    background-color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.benefitsList > *{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+}
+
+.footerLogo{
+    width: 3vw;
+    height: auto;
+}
+
+a{
+    color: white;
+    text-decoration: none; /* no underline */
+}
