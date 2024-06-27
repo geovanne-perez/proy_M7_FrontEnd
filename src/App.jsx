@@ -1,17 +1,19 @@
-import "./App.css";
-import Cuadrado from "./components/cuadrado";
-import Circulo from "./components/círculo";
-import Rombo from "./components/rombo";
+import AppRouter from "./routes/AppRouter";
 import NavBar from "./components/navbar";
-import LandingBody from "./components/landingBody";
 import Footer from "./components/footer";
+import toast, { Toaster } from 'react-hot-toast';
+import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import "./App.css";
+import "./index.css";
 
 function App() {
   return (
     <>
       <NavBar />
-      <LandingBody/>
+      <AppRouter />
       <Footer/>
+      <Toaster />
     </>
   );
 }

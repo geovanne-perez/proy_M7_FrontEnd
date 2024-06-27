@@ -6,8 +6,11 @@ import Card3 from "../assets/img/Card3.webp";
 import Benefits1 from "../assets/img/Benefits1.webp";
 import Plan1 from "../assets/img/Plan.png";
 import Serv1 from "../assets/img/Servicios.png";
+import toast, { Toaster } from 'react-hot-toast';
 
-const LandingBody = () => {
+const notify = () => toast.success('Here is your toast.');
+
+const Landing = () => {
   const bannerSize = {
     objectFit: "cover",
     width: "90%",
@@ -32,9 +35,11 @@ const LandingBody = () => {
               <button
                 type="button"
                 className="btn btn-primary btn-lg  mt-4 mb-2"
+                onClick={notify}
               >
                 Comprar un auto
               </button>
+    
             </div>
           </div>
           <div className="col-md-8 m-auto text-center">
@@ -174,4 +179,4 @@ const LandingBody = () => {
   );
 };
 
-export default LandingBody;
+export default Landing;
