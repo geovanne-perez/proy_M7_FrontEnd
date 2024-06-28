@@ -5,8 +5,8 @@ import NotFound from '../pages/NotFound';
 import About from '../pages/About';
 // import ProductDetail from '../pages/products/ProductDetail';
 // import ProductList from '../pages/products/ProductsList';
-// import Login from '../pages/Auth/Login';
-// import Signup from '../pages/Auth/Signup';
+import Login from '../pages/Auth/Login';
+import Signup from '../pages/Auth/Signup';
 
 function PublicRoute() {
     return (
@@ -16,10 +16,10 @@ function PublicRoute() {
             <Route path="/404" element={<NotFound />} />
             {/* <Route path="/checkout" element={<Checkout />} />
             <Route path="/products" element={<ProductList />} />
-            <Route path="/detail-product/:id" element={<ProductDetail />} />
+            <Route path="/detail-product/:id" element={<ProductDetail />} />*/}
 
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />*/}
+            <Route path="/signup" element={<Signup />} />
 
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="*" element={<Navigate to="/404" />} /> 

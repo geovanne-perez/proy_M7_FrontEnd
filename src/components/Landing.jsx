@@ -8,7 +8,7 @@ import Plan1 from "../assets/img/Plan.png";
 import Serv1 from "../assets/img/Servicios.png";
 import toast, { Toaster } from 'react-hot-toast';
 
-const notify = () => toast.success('Here is your toast.');
+const notify = () => toast('En construcción...');
 
 const Landing = () => {
   const bannerSize = {

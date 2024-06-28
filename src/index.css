@@ -16,12 +16,10 @@
 .header-left-side{
   text-align: left;
   font-weight: bold;
-  color: black;
 }
 .header-right-side{
     text-align: right;
     font-weight: bold;
-    color: black;
 }
 #banner{
     border-color: whitesmoke;
@@ -51,13 +49,21 @@
     border-bottom-style: solid;
     border-bottom-color: white;
 }
+.nav-item > *{
+    color: black;
+    padding: 1rem;
+
+}
+.navbar-light .navbar-nav .nav-link.active{
+    font-weight: bold;
+   }
 
 .footerLogo{
     width: 12vw;
     height: auto;
     filter: brightness(0) invert(1);
-
 }
+
 
 a{
     color: white;

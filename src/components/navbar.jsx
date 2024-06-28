@@ -1,13 +1,15 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useState, useContext } from "react";
 import UserContext from "../context/User.context";
 import logo from "../assets/Logo.png";
 import mx from "../assets/MxFlag.png";
 
 function NavBar() {
-  
+
   const { user, logout } = useContext(UserContext);
   const navigate = useNavigate();
+  const [isOpen, setIsOpen] = useState(false);
+  const handleToggle = () => setIsOpen(!isOpen);
 
   const DoLogout = () => {
     logout();
@@ -18,80 +20,76 @@ function NavBar() {
 
   let publicNav = () => {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-        <div className="container">
-          <a className="navbar-brand" href="#">
-            <img src={logo} className="logo" alt="Logo" />
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav header-left-side">
-              <NavLink to="/home">Inicio</NavLink>
-              <NavLink to="/catalog">Catálogo</NavLink>
-              <NavLink to="/About">Acerca De</NavLink>
-            </div>
-            <div className="navbar-nav header-right-side">
-              <a className="nav-link" href="#">
-                {" "}
-                <img src={mx} className="flags" alt="flags" />{" "}
-              </a>
-              <NavLink to="/Signup">Regístrate</NavLink>
-              <NavLink to="/login">Iniciar sesión</NavLink>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <NavLink to="/login">Iniciar sesión</NavLink>
+        </li>
+      </ul>
     );
   };
   let privateNav = () => {
     return (
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <NavLink to="/checkout">Carrito</NavLink>
+        </li>
+        <li className="nav-item">
+          <NavLink to="/profile">Mi perfil</NavLink>
+        </li>
+        <li className="nav-item">
+          <button className="btn btn-light btn-sm ms-2" onClick={DoLogout}>
+            Log out
+          </button>
+        </li>
+      </ul>
+    );
+  };
+
+  return (
+    <>
+    
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
           <a className="navbar-brand" href="#">
-            <img src={logo} className="logo" alt="Logo" />
+            <img src={logo} className="logo" alt="Logo" onClick={() => navigate("/home")} />
           </a>
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup"
-            aria-controls="navbarNavAltMarkup"
-            aria-expanded="false"
+            data-bs-target="#MyNavBar"
+            aria-controls="MyNavBar"
+            aria-expanded={isOpen}
             aria-label="Toggle navigation"
+            onClick={handleToggle}
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div className="navbar-nav header-left-side">
-              <NavLink to="/home">Inicio</NavLink>
-              <NavLink to="/catalog">Catálogo</NavLink>
-              <NavLink to="/About">Acerca De</NavLink>
-            </div>
-            <div className="navbar-nav header-right-side">
-              <a className="nav-link" href="#">
-                {" "}
-                <img src={mx} className="flags" alt="flags" />{" "}
-              </a>
-              <NavLink to="/checkout">Carrito</NavLink>
-              <NavLink to="/profile">Mi perfil</NavLink>
-              <button className='btn btn-light btn-sm ms-2' onClick={DoLogout} >Logout</button>
-            </div>
+          <div
+            className={
+              isOpen
+                ? "collapse navbar-collapse show"
+                : "collapse navbar-collapse"
+            }
+            id="MyNavBar"
+          >
+            <ul className="navbar-nav me-auto">
+              <li className="nav-item">
+                <NavLink className={"nav-link"} to="/home">Inicio</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className={"nav-link"} to="/catalog">Catálogo</NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className={"nav-link"} to="/About">Acerca De</NavLink>
+              </li>
+            </ul>
+            {user?.id ? privateNav() : publicNav()}
           </div>
         </div>
       </nav>
-    );
-  };
-  return <>{user?.id ? privateNav() : publicNav()}</>;
+    </>
+  );
 }
 
 export default NavBar;
