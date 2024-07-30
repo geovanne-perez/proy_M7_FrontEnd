@@ -33,7 +33,7 @@ const Login = () => {
             })
     }
     return (
-        <div className="container" style={{marginTop:"10rem"}}>
+        <div className="container col-4" style={{marginTop:"10rem"}}>
             <form className="form-login" onSubmit={enviarDatos}>
                 <h1 className="text-center mb-5">Iniciar Sesión</h1>
                 <div className="mb-3">

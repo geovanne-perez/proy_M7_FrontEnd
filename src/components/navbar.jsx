@@ -78,7 +78,7 @@ function NavBar() {
                 <NavLink className={"nav-link"} to="/home">Inicio</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className={"nav-link"} to="/catalog">Catálogo</NavLink>
+                <NavLink className={"nav-link"} to="/products">Catálogo</NavLink>
               </li>
               <li className="nav-item">
                 <NavLink className={"nav-link"} to="/About">Acerca De</NavLink>

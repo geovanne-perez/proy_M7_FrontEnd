@@ -7,13 +7,14 @@ import Benefits1 from "../assets/img/Benefits1.webp";
 import Plan1 from "../assets/img/Plan.png";
 import Serv1 from "../assets/img/Servicios.png";
 import toast, { Toaster } from 'react-hot-toast';
+import { NavLink, useNavigate } from "react-router-dom";
 
 const notify = () => toast('En construcción...');
 
 const Landing = () => {
   const bannerSize = {
-    objectFit: "cover",
-    width: "90%",
+    objectFit: "fill",
+    width: "60%",
     height: "50%",
   };
   const planCardSize = {
@@ -32,14 +33,7 @@ const Landing = () => {
             </h1>
             <p className="h5 text-center mt-4">¡Cotiza tu auto hoy!</p>
             <div className="d-grid gap-2">
-              <button
-                type="button"
-                className="btn btn-primary btn-lg  mt-4 mb-2"
-                onClick={notify}
-              >
-                Comprar un auto
-              </button>
-    
+              <NavLink to="/products" className="btn btn-primary btn-lg mt-4 mb-2">Comprar un auto</NavLink>
             </div>
           </div>
           <div className="col-md-8 m-auto text-center">
@@ -118,6 +112,7 @@ const Landing = () => {
                 <button
                     type="button"
                     className="btn btn-lg btn-light  mt-4 mb-2"
+                    onClick={notify}
                 >   
                     Vende tu auto
                 </button>
@@ -144,6 +139,7 @@ const Landing = () => {
                 <button
                     type="button"
                     className="btn btn-dark btn-lg mt-4 mb-2"
+                    onClick={notify}
                 >   
                    Comprar un auto a meses
                 </button>
@@ -164,6 +160,7 @@ const Landing = () => {
                 <button
                     type="button"
                     className="btn btn-lg btn-light  mt-4 mb-2"
+                    onClick={notify}
                 >   
                     Conoce los servicios
                 </button>
