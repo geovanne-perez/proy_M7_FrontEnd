@@ -1,68 +1,71 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.logo{
+    display: block;
+    max-width: 100%;
+    height: 100px;
   }
-  a:hover {
-    color: #747bff;
+
+  .flags{
+    display: block;
+    justify-content: space-around;
+    margin-right: 40px;
+    width: 30px;
+    height: 20px;
   }
-  button {
-    background-color: #f9f9f9;
-  }
+
+.header-left-side{
+  text-align: left;
+  font-weight: bold;
+}
+.header-right-side{
+    text-align: right;
+    font-weight: bold;
+}
+#banner{
+    border-color: whitesmoke;
+    border-style: solid;
+    border-width: 4px;
+}
+.topContainer{
+    margin-top: 150px;
+}
+
+#sectionBeneficios{
+    background-color: #3374DB;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+#sectionPlan{
+    background-color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.benefitsList > *{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+}
+.nav-item > *{
+    color: black;
+    padding: 1rem;
+
+}
+.navbar-light .navbar-nav .nav-link.active{
+    font-weight: bold;
+   }
+
+.footerLogo{
+    width: 12vw;
+    height: auto;
+    filter: brightness(0) invert(1);
+}
+
+
+a{
+    color: white;
+    text-decoration: none; /* no underline */
 }
